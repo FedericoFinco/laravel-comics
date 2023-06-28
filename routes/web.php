@@ -14,8 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    $links = config('store.someLinks');
-    return view('welcome', compact('links'));
+    $links = config('store.links');
+    $footerCols = config('store.footerCols');
+    $footerSocialMedias = config('store.footerSocialMedias');
+    return view('welcome', compact('links','footerCols','footerSocialMedias'));
 });
 
 Route::get('/otherpage', function () {
